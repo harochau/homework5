@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 5. Task 4.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload=mainTask()>
+    <p class="menuP">
+        <a class="menuLink" href="index.html">Заглавная страница</a>
+        <a class="menuLink" href="home5task3.html">Задание 3</a>
+        <a class="menuLink" href="home5task4.html">Задание 4</a>
+  
+  </p>
+    <script>
+
+        a=[0.5,2,2.5,1,0,0.7];
+        s=0;
+        for (let i = 0; i < a.length; i++) {
+            s+=Math.sqrt(a[i] + 5)/(i+1);           
+            // alert(q);
+            
+        }
+        
+        function c(a){
+            return Math.sqrt(a+5);
+        }
+        function sum(arr) {
+           return s = arr.reduce(function (accum, item) {return accum + item;}, 0);
+        }
+
+        arrC=[];
+        for (let i = 0; i < a.length; i++) {
+            arrC.push(c(a[i]));            
+        }
+        s2 = sum(arrC);
+        
+        
+        function mainTask (){
+            console.log(s);
+            alert("Рассчёт по формуле: "+s);
+            alert("Рассчёт в функциях: "+s2);
+        }
+            
+        
+    </script>
+    
+</body>
+</html>
