@@ -1,36 +1,36 @@
-.menuP{
-    margin-top: 20px;
+.menuP {
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
-.menuLink{
-    
-    padding: 16px;
-    background: #ff7f50;
-    color: white;
-    text-decoration: none;
+.menuLink {
+  padding: 16px;
+  background: #ff7f50;
+  color: white;
+  text-decoration: none;
 }
-.linePic{
-    width: 30vw;
+.linePic {
+  width: 30vw;
 }
-.bigPic{
-    /* width: 60vw; */
-    /* vertical-align: middle; */
-    max-width: 100%;
-    height: auto;
-    /* width: 50%; */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.bigPic {
+  /* width: 60vw; */
+  /* vertical-align: middle; */
+  max-width: 100%;
+  height: auto;
+  /* width: 50%; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.descLine{
-    width: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    /* text-indent: 2em; */
-    text-align: center;
+.descLine {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* text-indent: 2em; */
+  text-align: center;
 }
-label{
-    font-weight: normal;
+label {
+  font-weight: normal;
 }
 /* #p1{
     width: 50%;
@@ -38,7 +38,7 @@ label{
     margin-left: auto;
     margin-right: auto;
 } */
-#table1{
-    margin-left: auto; 
-margin-right: auto;
+#table1 {
+  margin-left: auto;
+  margin-right: auto;
 }

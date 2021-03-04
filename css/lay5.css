@@ -1,0 +1,42 @@
+.bstat,
+.brel,
+.bfix {
+  width: 250px;
+  height: 50px;
+  background: #fff;
+}
+
+.bstat {
+  position: static;
+  border: 1px solid #f00;
+}
+
+.brel {
+  position: relative;
+  border: 1px solid #30c;
+  top: -20px;
+  left: 20px;
+}
+
+.bfix {
+  position: fixed;
+  border: 1px solid #0c6;
+  top: 120px;
+  left: 120px;
+}
+
+.wrap {
+  position: relative;
+  border: 1px dashed #30c;
+  width: 300px;
+  height: 50px;
+  top: -100px;
+  left: 300px;
+}
+
+.babs {
+  position: absolute;
+  border: 1px solid #0c6;
+  top: 10px;
+  left: 120px;
+}

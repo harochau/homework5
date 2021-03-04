@@ -1,0 +1,44 @@
+.flx-itm,
+.grd-itm {
+  border: 2px solid #fff;
+  text-align: center;
+}
+
+.flx {
+  display: flex; /*flexbox-контейнер*/
+}
+
+.flx-chil {
+  flex-grow: 1;
+}
+
+.flx-itm {
+  width: 100px;
+  height: 50px;
+  background: #fc9;
+}
+
+.grd {
+  display: grid; /*grid-контейнер*/
+  grid-template-areas:
+    'a b c d d'
+    'e e f d d';
+}
+
+.grd-itm {
+  background: #ff9;
+  padding: 1em;
+}
+
+.grd-itm:nth-child(4) {
+  grid-area: d;
+}
+
+.grd-itm:nth-child(5) {
+  grid-area: e;
+}
+
+img {
+  width: 100px;
+  float: right; /*float - выравнивание картинки вправо*/
+}

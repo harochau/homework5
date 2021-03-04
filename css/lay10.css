@@ -1,0 +1,28 @@
+ul {
+  list-style-type: none;
+}
+
+a {
+  display: block;
+}
+
+a,
+li {
+  width: 100px;
+  height: 100px;
+}
+li {
+  float: left;
+  margin-left: 10px;
+  background-image: url('../images/soc1.jpg');
+}
+
+li:nth-child(1) {
+  background-position: -143px -44px; /* значок twitter */
+}
+li:nth-child(2) {
+  background-position: -357px -44px; /* значок facebook */
+}
+li:nth-child(3) {
+  background-position: -462px -156px; /* значок ok */
+}

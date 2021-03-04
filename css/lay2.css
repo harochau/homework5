@@ -1,0 +1,52 @@
+body {
+  color: #f4f4f4;
+}
+
+header {
+  text-align: center;
+  height: 55px;
+  background: #18aebb;
+}
+nav {
+  float: left;
+  padding: 5px;
+  height: 298px;
+  width: 20%;
+  background: #f59d1d;
+}
+nav h2 {
+  text-align: center;
+}
+section {
+  float: right;
+  width: 79%;
+  background: #1596a2;
+}
+
+section h1 {
+  padding: 10px;
+  text-align: center;
+}
+
+article {
+  float: left;
+  width: 99%;
+  margin: 5px;
+  padding-left: 5px;
+  text-align: center;
+  background: #36aa31;
+}
+
+article h2 {
+  text-align: center;
+}
+footer {
+  clear: both;
+  height: 40px;
+  padding: 10px;
+  background: #18aebb;
+}
+footer p {
+  font-size: 14px;
+  text-align: center;
+}

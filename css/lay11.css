@@ -1,0 +1,20 @@
+.flex-container {
+  width: 1000px;
+  height: 600px;
+  border: 1px solid #fc6;
+  padding: 10px;
+
+  display: flex; /*создаем flex-контейнер*/
+  flex-direction: row-reverse; /*свойство flex-контейнера*/
+}
+
+.flex-item {
+  background: #fc9;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+
+  align-self: center; /*свойство flex-элемента*/
+}

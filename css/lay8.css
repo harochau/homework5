@@ -1,0 +1,16 @@
+body {
+  border: 1px solid #888;
+  height: 600px;
+}
+
+#container {
+  width: 1224px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.block {
+  width: 300px;
+  height: 200px;
+  float: left;
+  border: 3px solid #888;
+}

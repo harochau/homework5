@@ -1,0 +1,17 @@
+.grid-container {
+  display: grid; /*создаем grid-контейнер*/
+  grid-template-columns: 300px 300px 300px; /*Создаем 3 столбца, шириной 300 пикс.*/
+
+  grid-gap: 10px; /* Задаем промежуток между ячейками – 10 пикс.*/
+}
+
+.grid-container div {
+  background: #fc9;
+  border: 1px solid #f96;
+  border-radius: 5px;
+  padding: 5px;
+  color: #fff;
+}
+div:nth-child(even) {
+  background: #fc6;
+}

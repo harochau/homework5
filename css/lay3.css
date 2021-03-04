@@ -1,0 +1,40 @@
+body {
+  font-family: Arial;
+  font-size: 14pt;
+}
+.b1 {
+  display: inline; /* строчный элемент, не выводиться из контента, ширина задается по размеру контента*/
+  background: #ccc;
+  padding: 10px;
+  border: 2px solid #999;
+}
+.b2 {
+  display: block; /*блочный элемент, выводиться из контента, можно задавать ширину и высоту блока*/
+  width: 200px;
+  padding: 20px;
+  margin: 30px;
+  background: #ccc;
+  border: 2px solid #999;
+}
+
+.b3 {
+  display: inline-block; /* строчно-блочный элемент, выводиться из контента, но остается внутри строки, можно задавать ширину и высоту блока*/
+  padding: 15px;
+  background: #ccc;
+  border: 2px solid #999;
+}
+
+a:link {
+  color: #fff;
+}
+a:visited {
+  color: #fff;
+}
+
+a {
+  display: block; /*делаем из строчного элемента (тег a) блочный, тем самым действие гиперссылки начинает распространятся на всю область блока*/
+  width: 300px;
+  height: 200px;
+  text-align: center;
+  background: url(../images/winter.jpg);
+}
