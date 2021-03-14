@@ -55,6 +55,10 @@
       s1+="</th>";
     }
       table1.innerHTML += s1+"</tr";
+      for (let elem of document.getElementsByTagName("label")){
+      elem.style.cssText = `font-weight: normal;
+      font-size:18pt;`;}
+
 
       function showPicAndDesc(placeKey){
         closePicAndDesc();
@@ -65,6 +69,12 @@
       onclick="closePicAndDesc()" alt="${images[placeKey].imagePath}">`;
       s3+=`<br><p class="descLine">${images[placeKey].description}<a href="${images[placeKey].link}"><sup>[источник]</sup></a></p>`
       p2.innerHTML+=s3;
+      document.querySelector("bigPic").style=`  max-width: 100%;
+  height: auto;
+  /* width: 50%; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;`;
 
       }
       function closePicAndDesc(){
