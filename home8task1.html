@@ -1,84 +1,101 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 8. Task 1.</title>
-    <link rel="stylesheet" href="styles.css">
-  
-  </head>
-  <body>
-      <p class="menuP">
-          <a class="menuLink" href="index.html">Заглавная страница</a>
-          <a class="menuLink" href="home8task1.html">Новая версия</a>
-    
-    </p>
-      <p id="p1"><table id="table1"></table></p>
-      <img id="pic1" src="" alt="">
-      <p id="p2"></p>
-      
-    <script>
-      let images = new Map();
-      images.set("Красный костел",{
-          title: "Красный костел",
-          description: `В храме святого Симеона и святой Елены
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homework 8. Task 1.</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <p class="menuP">
+    <a class="menuLink" href="index.html">Заглавная страница</a>
+    <a class="menuLink" href="home8task1.html">Новая версия</a>
+
+  </p>
+  <p id="p1">
+  <table id="table1"></table>
+  </p>
+  <img id="pic1" src="" alt="">
+  <p id="p2"></p>
+
+  <script>
+    let images = new Map();
+    images.set("Красный костел", {
+      title: "Красный костел",
+      description: `В храме святого Симеона и святой Елены
 находится полномасштабная копия Туринской Плащаницы.`,
-          link: "https://msj.by/katolicheskie-xramy/krasnyj-kostel-v-minske/",
-          imagePath : "red.jpg",
-        })
-        images.set("Троицкое предместье",{title: "Троицкое предместье",
-          description: `Троицкое предместье — исторический район города Минска,
+      link: "https://msj.by/katolicheskie-xramy/krasnyj-kostel-v-minske/",
+      imagePath: "red.jpg",
+      imagePathMore:[red1.jpg,red2.jpg],
+    })
+    images.set("Троицкое предместье", {
+      title: "Троицкое предместье",
+      description: `Троицкое предместье — исторический район города Минска,
 расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь.`,
-          link: "https://www.belarus.by/ru/travel/belarus-life/trinity-suburb",
-          imagePath : "troi.jpg",
-        });
-        images.set("Мирский замок",{
-          title: "Мирский замок",
-          description: `Построенный в начале XVI в. магнатом
+      link: "https://www.belarus.by/ru/travel/belarus-life/trinity-suburb",
+      imagePath: "troi.jpg",
+      imagePathMore:[troi1.jpg,troi2.jpg],
+    });
+    images.set("Мирский замок", {
+      title: "Мирский замок",
+      description: `Построенный в начале XVI в. магнатом
 Ю. И. Ильиничем замок стал первым частнособственническим замком на землях Белоруссии`,
-          link: "https://mirzamak.by/",
-          imagePath : "mir.jpg",
-        });
+      link: "https://mirzamak.by/",
+      imagePath: "mir.jpg",
+      imagePathMore:[mir.gif,mir1.jpg,mir2.jpg],
       
-      s1='<tr>';
-      s2='';
-      for (key in images){
-          s1+="<th>";
-            // alert(key);
-      s1+=`<img id="${key}" class="linePic" src="im/${images[key].imagePath}"
-      onclick="showPicAndDesc(this.id)" alt="${images[key].imagePath}">`;
-      s1+="<br><br>";
-      s1+=`<label for="${key}">${images[key].title}</label>`;
-      s1+="</th>";
+    });
+
+    s1 = '<tr>';
+    s2 = '';
+    for (value of images.values()) {
+      s1 += "<th>";
+      s1 += `<img class="linePic" src="im/${value.imagePath}"
+      onclick="showPicAndDesc(this.id)" onmouseover="showPicAndDescChanging(value)" alt="${value.imagePath}">`;
+      s1 += "<br><br>";
+      s1 += `<div class="title">${value.title}</div>`;
+      s1 += "</th>";
     }
-      table1.innerHTML += s1+"</tr";
-      for (let elem of document.getElementsByTagName("label")){
+    table1.innerHTML += s1 + "</tr";
+    for (let elem of document.getElementsByClassName("title")) {
       elem.style.cssText = `font-weight: normal;
-      font-size:18pt;`;}
+      font-size:18pt;`;
+    }
 
 
-      function showPicAndDesc(placeKey){
-        closePicAndDesc();
-        //   alert(placeKey);
-        //   console.log(placeKey);
-          s3 = '';
-          s3+=`<img id="${images[placeKey]}Big" class="bigPic" src="im/${images[placeKey].imagePath}"
+      function showPicAndDescChanging(MapEntry){
+        let s4 = '';
+        let path = "im/MapEntry.imagePath";
+        s3 += `<img  class="changingPic" src="im/${MapEntry.imagePath}"
       onclick="closePicAndDesc()" alt="${images[placeKey].imagePath}">`;
-      s3+=`<br><p class="descLine">${images[placeKey].description}<a href="${images[placeKey].link}"><sup>[источник]</sup></a></p>`
-      p2.innerHTML+=s3;
-      document.querySelector("bigPic").style=`  max-width: 100%;
+
+      }
+    function showPicAndDesc(placeKey) {
+      closePicAndDesc();
+      //   alert(placeKey);
+      //   console.log(placeKey);
+      s3 = '';
+      s3 += `<img id="${images[placeKey]}Big" class="bigPic" src="im/${images[placeKey].imagePath}"
+      onclick="closePicAndDesc()" alt="${images[placeKey].imagePath}">`;
+      s3 += `<br><p class="descLine">${images[placeKey].description}<a href="${images[placeKey].link}"><sup>[источник]</sup></a></p>`
+      p2.innerHTML += s3;
+      document.querySelector("bigPic").style = `  max-width: 100%;
   height: auto;
   /* width: 50%; */
   display: block;
   margin-left: auto;
   margin-right: auto;`;
 
-      }
-      function closePicAndDesc(){
-          p2.innerHTML='';
-      }
-          
+    }
+    function closePicAndDesc() {
+      p2.innerHTML = '';
+    }
 
-    </script>
-  </body>
+
+  </script>
+</body>
+
 </html>
