@@ -42,3 +42,13 @@ label {
   margin-left: auto;
   margin-right: auto;
 }
+.changingPic {
+  max-width: 100%;
+  animation: fade 1s linear infinite;
+  animation-delay: 0.5s;
+}
+@keyframes fade {
+  0% { opacity: 1 }
+  50% { opacity: 0 }
+  100% { opacity: 1 }
+}

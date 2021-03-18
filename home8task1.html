@@ -24,28 +24,31 @@
   <script>
     let images = new Map();
     images.set("Красный костел", {
+      identifier:1,
       title: "Красный костел",
       description: `В храме святого Симеона и святой Елены
 находится полномасштабная копия Туринской Плащаницы.`,
       link: "https://msj.by/katolicheskie-xramy/krasnyj-kostel-v-minske/",
       imagePath: "red.jpg",
-      imagePathMore:[red1.jpg,red2.jpg],
+      imagePathMore:["red.jpg","red1.jpg","red2.jpg"],
     })
     images.set("Троицкое предместье", {
+      identifier:2,
       title: "Троицкое предместье",
       description: `Троицкое предместье — исторический район города Минска,
 расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь.`,
       link: "https://www.belarus.by/ru/travel/belarus-life/trinity-suburb",
       imagePath: "troi.jpg",
-      imagePathMore:[troi1.jpg,troi2.jpg],
+      imagePathMore:["troi.jpg","troi1.jpg","troi2.jpg"],
     });
     images.set("Мирский замок", {
+      identifier: 3,
       title: "Мирский замок",
       description: `Построенный в начале XVI в. магнатом
 Ю. И. Ильиничем замок стал первым частнособственническим замком на землях Белоруссии`,
       link: "https://mirzamak.by/",
       imagePath: "mir.jpg",
-      imagePathMore:[mir.gif,mir1.jpg,mir2.jpg],
+      imagePathMore:["mir.jpg","mir.gif","mir1.jpg","mir2.jpg"],
       
     });
 
@@ -53,8 +56,9 @@
     s2 = '';
     for (value of images.values()) {
       s1 += "<th>";
-      s1 += `<img class="linePic" src="im/${value.imagePath}"
-      onclick="showPicAndDesc(this.id)" onmouseover="showPicAndDescChanging(value)" alt="${value.imagePath}">`;
+      link1 = value;
+      s1 += `<img sourceMap = "link1" id = "pic${value.identifier}" class="linePic" src="im/${value.imagePath}"
+      onclick="showPicAndDesc(this.id)" onmouseover="showPicAndDescChanging([${value.imagePathMore}])" alt="${value.imagePath}">`;
       s1 += "<br><br>";
       s1 += `<div class="title">${value.title}</div>`;
       s1 += "</th>";
@@ -66,11 +70,18 @@
     }
 
 
-      function showPicAndDescChanging(MapEntry){
+      function showPicAndDescChanging(PathArray){
         let s4 = '';
-        let path = "im/MapEntry.imagePath";
-        s3 += `<img  class="changingPic" src="im/${MapEntry.imagePath}"
-      onclick="closePicAndDesc()" alt="${images[placeKey].imagePath}">`;
+        i = 0;
+        
+        let path = `im/${PathArray[i]}`;
+        i++;
+        if (i>=PathArray.length)
+          i=0;
+        s4 += `<img  class="changingPic" src="${path}"
+      onclick="closePicAndDesc()" alt="${path}">`;
+      document.getElementById("p2").innerHTML = s4;
+      
 
       }
     function showPicAndDesc(placeKey) {
